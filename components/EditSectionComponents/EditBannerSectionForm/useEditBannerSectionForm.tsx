@@ -43,7 +43,7 @@ export const useEditBannerSectionForm = ({editSection}: {editSection: SectionBan
     } catch (error: unknown) {
       console.error(error)
     }
-  }, [editMode]);
+  }, [editMode, dispatch, handleCloseModal]);
 
   return {
     register,

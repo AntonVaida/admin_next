@@ -40,7 +40,7 @@ export const useEditSliderSectionForm = ({editSection}: {editSection: SectionSli
   const appendHandler = useCallback(() => {
     const emptySliderItem = getEmptySliderItem(fields?.length);
     append(emptySliderItem);
-  }, [fields?.length])
+  }, [fields?.length, append])
 
   const onSubmit = useCallback((data: ValidationSchema) => {
     try {
@@ -54,7 +54,7 @@ export const useEditSliderSectionForm = ({editSection}: {editSection: SectionSli
     } catch (error: unknown) {
       console.error(error)
     }
-  }, [editMode]);
+  }, [editMode, dispatch, handleCloseModal]);
 
   return {
     register,

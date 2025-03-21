@@ -40,7 +40,7 @@ export const useEditGridSectionForm = ({editSection} : {editSection: SectionGrid
   const appendHandler = useCallback(() => {
     const emptyGridItem = getGridItem(fields?.length);
     append(emptyGridItem);
-  }, [fields?.length])
+  }, [fields?.length, append])
 
   const onSubmit = useCallback((data: ValidationSchema) => {
     try {
@@ -54,7 +54,7 @@ export const useEditGridSectionForm = ({editSection} : {editSection: SectionGrid
     } catch (error: unknown) {
       console.error(error)
     }
-  }, [editMode]);
+  }, [editMode, dispatch, handleCloseModal]);
 
   return {
     register,

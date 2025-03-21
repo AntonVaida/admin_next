@@ -48,13 +48,13 @@ export const useTextSectionPreview = ({
   const onEditHandler = useCallback(() => {
     dispatch(editLayoutConfigActions.setEditSection({...sectionData}));
     dispatch(editLayoutConfigActions.setOpenEditModal(true));
-  }, [sectionData])
+  }, [sectionData, dispatch])
 
   const onDelateHandler = useCallback(() => {
     if (sectionData.id) {
       dispatch(layoutConfigActions?.delateSection(sectionData.id))
     }
-  }, [sectionData?.id])
+  }, [sectionData?.id, dispatch])
 
   return {
     sectionTitlePreview,

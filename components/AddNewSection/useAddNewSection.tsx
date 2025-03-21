@@ -63,7 +63,7 @@ export const useAddNewSection = ({ handleModalClose }: { handleModalClose?: () =
     }
 
     dispatch(layoutConfigActions.updateLayout());
-  }, [activeLayoutId])
+  }, [activeLayoutId, dispatch])
 
   return {
     buttonListConfig,

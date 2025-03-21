@@ -45,7 +45,7 @@ export const useEditTextSectionForm = ({
     } catch (error: unknown) {
       console.error(error)
     }
-  }, [editMode]);
+  }, [editMode, dispatch, handleCloseModal]);
 
   return {
     register,
