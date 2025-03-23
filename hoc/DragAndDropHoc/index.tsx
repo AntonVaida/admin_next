@@ -93,13 +93,13 @@ export const DragAndDropHoc = ({
   return (
     <div ref={ref} className="relative">
       {aboutToDrop === HighlightType.top ? (
-        <div className="h-[3px] w-full rounded-full bg-blue-500 absolute top-0 left-0 right-0 z-1000" />
+        <div className="h-[3px] w-full rounded-full bg-blue-500 absolute top-0 left-0 right-0 z-30" />
       ) : null}
       <div>
         {children}
       </div>
       {aboutToDrop === HighlightType.bottom ? (
-        <div className="h-[3px] w-full rounded-full bg-blue-500 absolute bottom-0 left-0 right-0 z-1000" />
+        <div className="h-[3px] w-full rounded-full bg-blue-500 absolute bottom-0 left-0 right-0 z-30" />
       ) : null}
        {preview ? (createPortal(children, preview)) : null}
     </div>
