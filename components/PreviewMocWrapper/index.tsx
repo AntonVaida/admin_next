@@ -1,11 +1,19 @@
 import { usePreviewMocWrapper } from "./usePreviewMocWrapper"
-import { SectionBanner, SectionGrid, SectionSlider, SectionText, SectionsType } from "@/shared/types"
-import { TextSectionPreview } from "../TextSectionPreview"
+import { 
+  SectionBanner, 
+  SectionGrid, 
+  SectionSlider, 
+  SectionText, 
+  SectionsType 
+} from "@/shared/types"
+import { 
+  TextSectionPreview,   
+  BannerSectionPreview, 
+  SliderSectionPreview, 
+  GridSectionPreview  
+} from "../PreviewSections/index"
 import { DragAndDropHoc } from "@/hoc"
-import { BannerSectionPreview } from "../BannerSectionPreview"
-import { SliderSectionPreview } from "../SliderSectionPreview"
-import { GridSectionPreview } from "../GridSectionPreview"
-import { Loader } from "../Loader"
+import { Loader } from "../ui/loader"
 
 
 const WrapperSectionItem = ({

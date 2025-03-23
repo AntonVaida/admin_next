@@ -83,10 +83,9 @@ const updateLayout = createAsyncThunk(
         data = await layoutsApi.updateLayout({ activeLayoutId: currentActiveLayoutId,  layoutData });
       }
 
-      
       if (data?.sections?.length) {
         dispatch(layoutConfigActions.setSections({sections: data?.sections}))
-        dispatch(layoutConfigActions.setActiveLayoutId(data?.id))
+        dispatch(layoutConfigActions.setActiveLayoutId(data?._id))
       }
       
     } catch (e) {

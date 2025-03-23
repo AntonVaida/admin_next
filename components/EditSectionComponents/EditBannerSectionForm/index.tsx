@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useEditBannerSectionForm } from "./useEditBannerSectionForm"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { ImageIndentLeftIcon, ImageIndentRightIcon } from "@/shared"
-import { BannerSectionPreview } from "@/components/BannerSectionPreview"
+import { BannerSectionPreview } from "@/components/PreviewSections/BannerSectionPreview"
 import { FormFieldsSectionHoc } from "@/hoc"
 
 

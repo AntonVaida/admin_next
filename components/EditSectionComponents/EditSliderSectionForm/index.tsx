@@ -7,7 +7,7 @@ import { PluseIcon, TrashIcon } from "@/shared"
 import { UseFormRegister, FieldErrorsImpl, UseFieldArrayRemove } from "react-hook-form"
 import { ValidationSchema } from "./settings"
 import { Checkbox } from "@/components/ui/checkbox"
-import { SliderSectionPreview } from "@/components/SliderSectionPreview"
+import { SliderSectionPreview } from "@/components/PreviewSections/SliderSectionPreview"
 import { FormFieldsSectionHoc } from "@/hoc"
 
 const SlideItemForm = ({

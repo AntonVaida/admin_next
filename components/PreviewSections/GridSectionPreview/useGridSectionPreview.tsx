@@ -53,10 +53,10 @@ export const useGridSectionPreview = ({
 
   const imgWidth = useMemo(() => {
     if (size?.width) {
-      return Math.round(size?.width / 2 - 16);
+      return Math.round(size?.width / 2 - 8);
     }
 
-    return containerWidth ? Math.round(containerWidth / 2 - 16) : 0;
+    return containerWidth ? Math.round(containerWidth / 2 - 32) : 0;
   }, [size?.width, containerWidth,])
 
   return {

@@ -2,7 +2,7 @@ import { useEditTextSectionForm } from "./useEditTextSectionForm"
 import { SectionText } from "@/shared/types"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { TextSectionPreview } from "@/components/TextSectionPreview"
+import { TextSectionPreview } from "@/components/PreviewSections/TextSectionPreview"
 import { FormFieldsSectionHoc } from "@/hoc"
 
 

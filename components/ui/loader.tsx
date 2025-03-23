@@ -1,4 +1,4 @@
-export const Loader = ({width = 32, height = 32}) => {
+function Loader({width = 32, height = 32}) {
   return (
     <div 
       className="border-transparent border-t-blue-500 border-[3px] rounded-full animate-spin"
@@ -10,3 +10,5 @@ export const Loader = ({width = 32, height = 32}) => {
     </div>
   )
 }
+
+export { Loader }

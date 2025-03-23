@@ -1,5 +1,4 @@
 import { SectionSlider, SliderItem } from "@/shared/types"
-import { EditIcon, TrashIcon } from "@/shared"
 import Image from "next/image"
 import { useSliderSectionPreview } from "./useSliderSectionPreview"
 import {
@@ -10,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { useSliderItemCard } from "./useSliderItemCard"
+import { PreviewCardHoc } from "@/hoc"
 
 const SliderItemCard = ({
   sliderItemData,
@@ -28,12 +28,12 @@ const SliderItemCard = ({
   } = useSliderItemCard({sliderItemData});
 
   return (
-    <div className={`w-full flex flex-col justify-center items-center relative ${centralMode ? "rounded-2xl" : "rounded-lg"} overflow-hidden`}>
+    <div className={`w-full flex flex-col justify-center items-center relative ${centralMode ? "rounded-2xl" : "rounded-lg"}`}>
       <div style={{
         height: imgHeight,
       }}>
         <Image 
-          className={`${centralMode ? "rounded-2xl" : "rounded-lg"} overflow-hidden`} 
+          className={`${centralMode ? "rounded-2xl" : "rounded-lg"} overflow-hidden object-cover`} 
           style={{
             height: imgHeight,
           }} 
@@ -87,15 +87,23 @@ export const SliderSectionPreview = ({
   } = useSliderSectionPreview({sectionData, previewMode, containerWidth})
 
   return (
-    <div
-      className="relative"
-      onMouseEnter={mouseEnterHandler}
-      onMouseLeave={mouseLeaveHandler}
+    <PreviewCardHoc
+      mouseEnterHandler={mouseEnterHandler}
+      mouseLeaveHandler={mouseLeaveHandler}
+      onEditHandler={onEditHandler}
+      onDelateHandler={onDelateHandler}
+      isHovered={isHovered}
+      previewMode={previewMode}
+      showDragAndDropButton={sectionData?.centralMode}
+      containerStyles={`${sectionData?.centralMode ? "py-[8px]" : ""}`}
+      buttonDragAndDropStyles={`${sectionData?.centralMode ? "translate-y-[8px]" : ""} translate-x-[10px]`}
+      buttonEditStyles={`${sectionData?.centralMode ? "translate-y-[8px]" : ""}`}
+      buttonTrashStyles={`${sectionData?.centralMode ? "translate-y-[8px]" : ""}`}
     >
       <div
         className={`min-h-[150px] ${sectionData?.centralMode ? "p-0" : "px-[16px] py-[8px]"} bg-white rounded-2xl ${showOutline ? "border-blue-500" : "border-transparent"} border-[1px] border-solid overflow-hidden`}
         style={{
-          width: containerWidth ? containerWidth : "100%",
+          width: containerWidth ? containerWidth : "",
           height: sectionData?.centralMode ? imgHeight : ""
         }}
       >
@@ -126,26 +134,6 @@ export const SliderSectionPreview = ({
           </Carousel>
         </div>
       </div>
-      {!previewMode && isHovered ? (
-        <>
-          <button 
-            className="w-[20px] h-[20px] rounded-full bg-slate-300 border-0 flex justify-center items-center absolute top-[-10px] left-[20px] transform hover:scale-150 transition duration-200 z-1000"
-            onClick={onEditHandler}
-          >
-            <div className="w-[12px] h-[12px] flex justify-center items-center">
-              <EditIcon />
-            </div>
-          </button>
-          <button 
-            className="w-[20px] h-[20px] rounded-full bg-slate-300 border-0 flex justify-center items-center absolute top-[-10px] right-[20px] transform hover:scale-150 transition duration-200 z-1000"
-            onClick={onDelateHandler}
-          >
-            <div className="w-[12px] h-[12px] flex justify-center items-center">
-              <TrashIcon />
-            </div>
-          </button>
-        </>
-      ) : null}
-    </div>
+    </PreviewCardHoc>
   )
 }

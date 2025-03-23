@@ -36,13 +36,13 @@ export const IphoneMocHoc = ({
             <IphoneFrontImage height={mocSize?.mocContainer?.height} />
           </div>
           <div 
-            className="absolute top-[1.5%] left-[3.4%] overflow-hidden overflow-y-scroll custom-scroll"         
+            className="absolute top-[1.5%] left-[3.4%] overflow-hidden overflow-y-scroll custom-scroll bg-white"         
             style={mocSize?.childContainer}
           >
             {children}
           </div>
           <div 
-            className="absolute left-[50%] transform -translate-x-1/2"
+            className="absolute left-[50%] transform -translate-x-1/2 z-50"
             style={{
               top: mocSize?.dynemicIsland?.top
             }}

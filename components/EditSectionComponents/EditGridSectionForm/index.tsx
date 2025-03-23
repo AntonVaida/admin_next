@@ -5,7 +5,7 @@ import { PluseIcon, TrashIcon } from "@/shared"
 import { UseFormRegister, FieldErrorsImpl, UseFieldArrayRemove } from "react-hook-form"
 import { ValidationSchema } from "./settings"
 import { useEditGridSectionForm } from "./useEditGridSectionForm"
-import { GridSectionPreview } from "@/components/GridSectionPreview"
+import { GridSectionPreview } from "@/components/PreviewSections/GridSectionPreview"
 import { FormFieldsSectionHoc } from "@/hoc"
 
 const GridItemForm = ({

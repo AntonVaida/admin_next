@@ -6,12 +6,20 @@ import {
   TextIcon  
 } from "@/shared"
 import { useDispatch, useSelector } from "react-redux"
-import { SectionBannerClass, SectionGridClass, SectionSliderClass, SectionTextClass } from "@/shared/classes";
+import { 
+  SectionBannerClass, 
+  SectionGridClass, 
+  SectionSliderClass, 
+  SectionTextClass 
+} from "@/shared/classes";
 import { addNewSectionHandler } from "@/utils";
-import { getSections, getActiveLayoutId } from "@/store/LayoutConfigReducer";
+import { 
+  getSections, 
+  getActiveLayoutId, 
+  getLoading, 
+  layoutConfigActions 
+} from "@/store/LayoutConfigReducer";
 import { AppDispatch } from "@/store";
-import { layoutConfigActions } from "@/store/LayoutConfigReducer";
-import { getLoading } from "@/store/LayoutConfigReducer";
 
 
 export const useAddNewSection = ({ handleModalClose }: { handleModalClose?: () => void }) => {
@@ -63,7 +71,11 @@ export const useAddNewSection = ({ handleModalClose }: { handleModalClose?: () =
     }
 
     dispatch(layoutConfigActions.updateLayout());
-  }, [activeLayoutId, dispatch])
+
+    if (handleModalClose) {
+      handleModalClose();
+    }
+  }, [activeLayoutId, dispatch, handleModalClose])
 
   return {
     buttonListConfig,
