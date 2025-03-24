@@ -17,7 +17,7 @@ export const FormFieldsSectionHoc = ({
 
   return (
     <div
-      className="w-full md:w-[65%]"
+      className="w-full flex-grow-1 md:w-[65%]"
     >
       <div className={`w-full overflow-y-auto px-[8px] md:px-[24px] ${containerClassNames ? containerClassNames : 'h-[35vh] md:h-[calc(80vh-64px-32px-48px)] md:max-h-[calc(750px-64px-32px-48px)]'}`}>
         {children}
